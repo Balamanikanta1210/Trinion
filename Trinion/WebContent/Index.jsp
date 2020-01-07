@@ -24,7 +24,7 @@
 			</div>
 			<div id="nav-content" tabindex="0">
 				<ul>
-					<li><a href="HelloWorld.jsp" class="Home">Home</a></li>
+					<li><a href="Home.jsp" class="Home">Home</a></li>
 					<li><a href="FileUpload.jsp" class="Upload">Upload a File</a></li>
 					<li><a href="HelloWorld.jsp" class="Home">Existing Files</a></li>
 					<li><a href="HelloWorld.jsp" class="Home">Templates</a></li>

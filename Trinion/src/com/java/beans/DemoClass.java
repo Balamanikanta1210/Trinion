@@ -21,6 +21,7 @@ public class DemoClass {
 			String responseCode="";
 			Map<String, String> hunderedtrans = new HashMap<String, String>();
 			Map<String, List<String>> onetentrans = new HashMap<String, List<String>>();
+			Map<String,String> approvedtrans=new HashMap<String,String>();
 			LineNumberReader r = new LineNumberReader(new FileReader(filename));
 			while ((line = r.readLine()) != null) {
 				String lineWithoutSpaces = line.replaceAll("\\s+", "");
@@ -70,11 +71,16 @@ public class DemoClass {
 			}
 	        for(Map.Entry<String, List<String>> data:onetentrans.entrySet())
 	        {
+	        	if(data.getValue().get(1).equals("00"))
+	        	{
+	        		approvedtrans.put(data.getKey(), data.getValue().get(0));
+	        	}
 	        	System.out.println("Entry key"+data.getKey());
 	        	System.out.println("Entry Value"+data.getValue().get(1));
 	        }
 			System.out.println(onetentrans.keySet());
 			System.out.println(hunderedtrans.keySet());
+			System.out.println(approvedtrans.keySet());
 		} catch (Exception e) {
 			// TODO: handle exception
 		}

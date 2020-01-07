@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" href="css/Fileupload.css" type="text/css">
+
 <title>Guru File</title>
 <script
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
@@ -12,13 +13,17 @@
 <script src="js/Trinion.js" type="text/javascript"></script>
 </head>
 <body>
-<div class="upload-btn-wrapper">
-<form method="post" id="uploadFormId" class="myform" enctype="multipart/form-data">
-<input type="file" id="file" size="50" />
-<br/><br/>	
-<input type="submit" class="uploadbtn" value="Upload File" onclick = "return false"/>
-</form>
-</div>
-<div id="message"></div>
+	<div class="upload-btn-wrapper">
+		<form method="post" id="uploadFormId" class="myform "
+			enctype="multipart/form-data">
+
+			 <input type="file" id="file" size="50" />
+				
+			
+			<br /> <input type="submit" class="uploadbtn" value="Upload File"
+				onclick="return false" />
+		</form>
+	</div>
+	<div id="message"></div>
 </body>
 </html>

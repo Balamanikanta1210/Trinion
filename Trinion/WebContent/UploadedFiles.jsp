@@ -7,6 +7,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="css/w3.css" type="text/css">
+<link rel="stylesheet" href="css/table.css" type="text/css">
 <title>Insert title here</title>
 <script
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
@@ -40,7 +41,7 @@ List<LogFileDetails> list=GetUploadFilesList.getRecords(pageid,total);
   
 out.print("<h1>Uploaded Files</h1>");  
 out.print("<table border='1' cellpadding='4' width='60%'>");  
-out.print("<tr><th>Uploaded Date</th><th>Uploaded time</th><th>FilePath</th>");  
+out.print("<tr><th>Uploaded Date</th><th>Uploaded time</th><th>FilePath</th><th></th>");  
 for(LogFileDetails e:list){  
     out.print("<tr><td>"+e.getUploadedDate()+"</td><td>"+e.getUploadedTime()+"</td><td class='file'>"+e.getFilePath()+"</td>");
     out.print("<td><input type='button' class='generate' value='Generate'></td></tr>");
