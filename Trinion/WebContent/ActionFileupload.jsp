@@ -6,6 +6,7 @@
 <%@ page import="org.apache.commons.fileupload.disk.*"%>
 <%@ page import="org.apache.commons.fileupload.servlet.*"%>
 <%@ page import="org.apache.commons.io.output.*"%>
+<%@ page import="com.java.src.MysqlConnection"%>
 <%@ page import="java.sql.Connection,java.sql.Statement,com.java.src.*" %>
 <%
 	File file;

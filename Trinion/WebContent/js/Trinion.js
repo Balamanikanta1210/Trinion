@@ -26,22 +26,47 @@ $(document).ready(function() {
 	});
 	
 	$(".generate").click(function() {
-	    var file = $(this).closest("tr")   // Finds the closest row <tr> 
+	    var filePath = $(this).closest("tr")   // Finds the closest row <tr> 
 	                       .find(".file")     // Gets a descendent with class="nr"
-	                       .text();         // Retrieves the text within <td>
-
+	                       .text();   
+	    // Retrieves the text within <td>
+	    var formData = new FormData();
+	    formData.append("file", filePath);
 	    $.ajax({
-	        url: 'HelloWorld.jsp',
-	        type: "POST",
+	        url: "http://localhost:8090/trinio/v1/template-set",
+	        type: "post",
 	        cache: false,
-	        data: {filepath: file},
-	        success: function (data) {
+	        enctype: 'multipart/form-data',
+	        data: {file:filePath},
+	        async : true,
+	        crossDomain : true,
+	        contentType: false,
+	        //contentType: 'application/json',
+	        /*accepts: 'application/octet-stream',*/
+	        //ContentType: 'text/plain',
+       // ContentDisposition: 'attachment; filename=test.txt',
+	        success: function (data,status) {
 	             //or you can use console.log(info);
+	        	debugger;
+	        	console.log(data);
 	        	alert(data);
 	            $("#message").html(data);
-	        }
+	            
+	        },
+	        error:function(data,textStatus,xhr)
+	        {
+	        	alert(JSON.stringify(data));
+	        	//alert(data);
+	        },
+//	        headers: {
+//	            Accept: 'application/octet-stream;charset=utf-8',
+//	            contentType: 'application/octet-stream;charset=utf-8',
+//	            ContentType: 'application/octet-stream',
+//		        ContentDisposition: 'attachment'
+//	          }
+	        
 	    });       
-	});
+});
 	
 	$(".uploadbtn").click(function() {
 		var fd = new FormData();
